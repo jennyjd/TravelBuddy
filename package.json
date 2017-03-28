@@ -7,15 +7,19 @@
     "coffee-loader": "^0.7.3",
     "coffee-script": "^1.12.4",
     "compression-webpack-plugin": "^0.3.2",
+    "css-loader": "^0.27.3",
     "glob": "^7.1.1",
     "path-complete-extname": "^0.1.0",
     "rails-erb-loader": "^3.2.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "style-loader": "^0.16.1",
     "webpack": "^2.2.1",
     "webpack-merge": "^4.1.0"
   },
   "devDependencies": {
+    "node-sass": "^4.5.1",
+    "sass-loader": "^6.0.3",
     "webpack-dev-server": "^2.4.2"
   }
 }

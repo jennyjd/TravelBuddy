@@ -32,6 +32,14 @@ const config = {
     rules: [
       { test: /\.coffee(\.erb)?$/, loader: 'coffee-loader' },
       {
+        test: /\.(scss|sass)$/,
+        loaders: [
+          'style-loader',
+          'css-loader?modules&importLoaders=3&localIdentName=[name]__[local]__[hash:base64:5]',
+          'sass-loader'
+        ]
+      },
+      {
         test: /\.jsx?(\.erb)?$/,
         exclude: /node_modules/,
         loader: 'babel-loader',
