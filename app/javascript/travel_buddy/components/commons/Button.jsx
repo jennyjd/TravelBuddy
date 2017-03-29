@@ -1,17 +1,31 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom'
-import './Button.sass'
+import styles from './Button.sass'
 
-class Button extends React.Component{
-  constructor(props){
-    super(props);
-  }
+const Button = ({ modifiers, disabled, children, onClick }) => {
+  const getClassNames = () =>
+    [styles['button'], ...modifiers.map((modifier) => styles[`button--${modifier}`])].join(' ');
 
-  render(){
-    return(
-      <button>HELLO ITS ME</button>
-    );
-  }
-}
+  const attributes = {
+    className: getClassNames(),
+  };
+
+  if (disabled) attributes.disabled = disabled;
+
+  if (onClick) attributes.onClick = onClick;
+
+  return React.createElement('button', attributes, children);
+};
+
+Button.defaultProps = {
+  modifiers: [],
+};
+
+Button.propTypes = {
+  modifiers: PropTypes.arrayOf(PropTypes.string),
+  disabled: PropTypes.bool,
+  children: PropTypes.string,
+  onClick: PropTypes.func
+};
 
 export default Button;

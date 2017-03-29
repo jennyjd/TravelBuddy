@@ -10,7 +10,7 @@ let store = createStore(travelBuddyApp)
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Provider store={store}>
-      <Button />
+      <Button modifiers={['orange']}> Hello its me </Button>
     </Provider>,
     document.body.appendChild(document.createElement('div')),
   )
