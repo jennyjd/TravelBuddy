@@ -1,10 +1,15 @@
 import React from 'react'
+import Header from '../components/Header/Header.jsx'
 import Button from '../components/commons/Button.jsx'
 
 class App extends React.Component {
   render() {
     return (
-      <Button modifiers={['orange']}> Hello its me </Button>
+      <div>
+        <Header>
+          <Button modifiers={['orange']}> Hello its me </Button>
+        </Header>
+      </div>
     );
   }
 }
